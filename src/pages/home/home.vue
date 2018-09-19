@@ -3,6 +3,7 @@
     <home-header></home-header>
     <clock></clock>
     <time-table class="table"></time-table>
+    <footer></footer>
   </div>
 </template>
 
@@ -10,12 +11,15 @@
 import HomeHeader from './components/header'
 import Clock from './components/clock'
 import TimeTable from './components/timetable'
+import Footer from './components/footer'
+import $ from 'jquery';
 export default {
   name: 'Home',
   components: {
     HomeHeader,
     Clock,
-    TimeTable
+    TimeTable,
+    Footer
   }
 }
 </script>
@@ -26,5 +30,5 @@ export default {
     weight: 360px
     height: 640px
     .table
-      width: 375px
+      width: 360px
 </style>
