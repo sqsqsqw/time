@@ -13,11 +13,11 @@
           <img src="../static/img/add.png">
         </div>
         <div class="addtext">
-          &nbsp&nbsp添加事项
+          &nbsp;&nbsp;添加事项
         </div>
       </div>
     </center>
-  </div> 
+  </div>
 
 </template>
 
@@ -26,19 +26,19 @@
 export default {
   name: 'Clock',
   mounted: function () {
-    gettime();
+    gettime()
   }
 }
-var time = "";
-var date = "";
+var time = '';
+var date = '';
 
 function gettime () {
-    var d = new Date();
-    time = d.getHours() + ':'+ checkTime(d.getMinutes()) + ':' + checkTime(d.getSeconds());
-    date = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate()
-    document.getElementById('time').innerText = time;
-    document.getElementById('date').innerText = date;
-    setTimeout(function () { gettime() },1000);
+  var d = new Date();
+  time = d.getHours() + ':'+ checkTime(d.getMinutes()) + ':' + checkTime(d.getSeconds());
+  date = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate()
+  document.getElementById('time').innerText = time;
+  document.getElementById('date').innerText = date;
+  setTimeout(function () { gettime() },1000);
 }
 
 function checkTime (i) {
