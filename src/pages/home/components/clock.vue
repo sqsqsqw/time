@@ -1,7 +1,7 @@
 <template>
   <div class="clockpage">
     <div class="clock-setting-icon">
-      <img src="../static/img/clockSetting.png">
+        <span class="iconfont" :style="{fontSize: 20 + 'px' }">&#xec08;</span>
     </div>
     <center>
       <p id="date"></p>
@@ -10,7 +10,7 @@
     <center>
       <div class="add">
         <div class="addicon">
-          <img src="../static/img/add.png">
+          <span class="iconfont" :style="{fontSize: 20 + 'px'}">&#xe6df;</span>
         </div>
         <div class="addtext">
           &nbsp;&nbsp;添加事项
@@ -29,23 +29,23 @@ export default {
     gettime()
   }
 }
-var time = '';
-var date = '';
+var time = ''
+var date = ''
 
 function gettime () {
-  var d = new Date();
-  time = d.getHours() + ':'+ checkTime(d.getMinutes()) + ':' + checkTime(d.getSeconds());
+  var d = new Date()
+  time = d.getHours() + ':' + checkTime(d.getMinutes()) + ':' + checkTime(d.getSeconds())
   date = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate()
-  document.getElementById('time').innerText = time;
-  document.getElementById('date').innerText = date;
-  setTimeout(function () { gettime() },1000);
+  document.getElementById('time').innerText = time
+  document.getElementById('date').innerText = date
+  setTimeout(function () { gettime() }, 1000)
 }
 
 function checkTime (i) {
   if (i<10) {
-    i="0" + i;
+    i= '0' + i
   }
-  return i;
+  return i
 }
 
 </script>
@@ -57,7 +57,8 @@ function checkTime (i) {
     text-align: center
     .clock-setting-icon
       float: right
-      padding 7px 7px 0 0
+      padding 15px 15px 0 0
+      color: #2a82e4
     #time
       letter-spacing: 0.07em
       font-size: 35px
@@ -77,8 +78,9 @@ function checkTime (i) {
       line-height: 45px
       color: #808080
       .addicon
-        padding: 7px 0 0 110px
+        padding: 0 0 0 110px
         float: left
+        color: #999999
       .addtext
         width: 110px
         line-height: 45px

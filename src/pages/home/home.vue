@@ -8,6 +8,9 @@
             <clock></clock>
             <time-table class="table"></time-table>
           </div>
+          <div class='swiper-slide'>
+            <schedule></schedule>
+          </div>
         </div>
       </div>
     </div>
@@ -20,22 +23,38 @@ import HomeHeader from './components/header'
 import Clock from './components/clock'
 import TimeTable from './components/timetable'
 import Foot from './components/footer'
+import Schedule from './components/schedule'
 import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.css'
 import $ from 'jquery'
+import axios from 'axios'
 export default {
   name: 'Home',
   components: {
     HomeHeader,
     Clock,
     TimeTable,
-    Foot
+    Foot,
+    Schedule
   },
   mounted: function () {
-    this.swip2init();
+    this.swip2init()
+    this.getHomeInfo()
   },
   methods: {
     swip2init: function() {
-      var myswiper = new Swiper('#swiper1');
+      var myswiper1 = new Swiper('#swiper1')
+      var myswiper2 = new Swiper('#swiper2',{
+        height: 514,
+        width: 360
+      })
+    },
+    getHomeInfo: function() {
+      axios.get('/static/moke/index.json')
+        .then(this.getHomeInfoSucc)
+    },
+    getHomeInfoSucc: function(res){
+      console.log(res)
     }
   }
 }
@@ -50,8 +69,11 @@ export default {
       width: 360px
       height: 60px
     .content
-      width: 360px
+      width: auto
       height: auto
+      .swiper-slide
+        height: 514px
+        width: 360px
     .foot
       width: 360px
       height: 64px

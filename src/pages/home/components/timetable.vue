@@ -4,7 +4,8 @@
       <div class='swiper-wrapper'>
         <div class='swiper-slide'>
           <div class="tablebtns">
-            <div class='tablebtn'>
+            <div class='tablebtn' v-for="item in btn">
+            <!--  <div class="btn btn-"+{{item.color}} :style="{ width:  {{item.end}}-{{item.start}} + 'px',marginLeft: + {{item.start}} + 450 + 'px',marginTop: 60 + 'px'}">{{item.title}}</div>-->
             </div>
           </div>
           <div class="timeline" :style="{marginLeft: now + 450 + 'px'}"></div>
@@ -22,6 +23,7 @@ import echarts from 'echarts'
 import Vue from 'vue'
 import Swiper from 'swiper'
 import $ from 'jquery'
+import 'swiper/dist/css/swiper.css'
 var now;
 Vue.prototype.$echarts = echarts
 export default {
@@ -42,10 +44,9 @@ export default {
         start: '800',
         end: '1000'
       }],
-      now: now
+      now: now,
+      onbtn: ''
     }
-  },
-  beforeMounted: function() {
   },
   mounted: function () {
     this.drawlines();
@@ -54,24 +55,21 @@ export default {
   methods: {
     drawlines: function () {
       var myChart = echarts.init(document.getElementById('table'));
-
-        // 指定图表的配置项和数据
-        var option = {
-          xAxis: {
+      var option = {
+        xAxis: {
             data: ['0:00', '1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '24:00'],
-            position: 'top',
-            boundaryGap: false,
-            axisTick: {
-              length: 380
-            },
-            axisLine: {
-              lineStyle: {
-                color: '#aaa'
-              },
-
-            
-            }
+          position: 'top',
+          offset: 15,
+          boundaryGap: false,
+          axisTick: {
+            length: 300
           },
+          axisLine: {
+            lineStyle: {
+             color: '#aaa'
+            },
+          }
+        },
           yAxis: {
             show: false
 
@@ -114,14 +112,39 @@ window.onload = timeinit();
         margin-left: -270px
         width: 2000px
         float: left
-       .timeline
+        .btn
+          line-height: 50px
+          text-align: center
+          color: white
+          border-radius: 5px
+          height: 50px
+          position: absolute
+          color: white
+        .btn-red
+          background-color: #ff5454
+        .btn-orange
+          background-color: #ff9a33
+        .btn-yellow
+          background-color: #ffce4c
+        .btn-green
+          background-color: #43cf7c
+        .btn-cyan
+          background-color: #49cbd0
+        .btn-blue
+          background-color: #2a82e4
+        .btn-purpeo
+          background-color: #7948ea
+        .btn-gray
+          background-color: #808080
+        
+        .timeline
           width: 2px
           height: 500px
           background-color: red
           position: absolute
         #table
           width: 4500px
-          height: 500px
+          height: 400px
           padding: 0
           margin: 0
   

@@ -7,13 +7,13 @@
           <div class="foot-icon">
             <img src="../static/img/foot-gray-1.png">
           </div>
-            <div class="foot-text">安排</div>
+            <div class="foot-text">习惯</div>
         </div>
         <div class='piece'>
           <div class="foot-icon">
             <img src="../static/img/foot-gray-2.png">
           </div>
-          <div class="foot-text">统计</div>
+          <div class="foot-text">日程</div>
         </div>
         <div class='piece'>
           <div class="foot-icon">
@@ -61,5 +61,4 @@ export default {
           .foot-text
             font-size: 10px
             color: gray
-      
 </style>

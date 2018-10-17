@@ -2,13 +2,14 @@
   <div>
     <div class="header">
       <div class="header-left">
-        <img src="../static/img/notice.png">
+        <span class="iconfont " :style="{fontSize: 20 + 'px'}">&#xe622;</span>
       </div>
       时间戳
       <div class="header-right">
-        <img src="../static/img/setting.png">
+        <span class="iconfont" :style="{fontSize: 20 + 'px'}">&#xe64b;</span>
       </div>
     </div>
+    <hr class='border'/>
   </div>
 </template>
 
@@ -21,19 +22,27 @@ export default {
 <style lang="stylus" scoped>
   @import '~@/assets/styles/varibles.styl'
   .header
-    height: 60px
-    line-height: 60px
+    height: 58px
+    line-height: 58px
     background: $bgcolor
     text-align: center
     color: #505050
     .header-left
       height: 24px
       margin-left: 16px
-      margin-top: 10px
       float: left
+      color: #2a82e4
     .header-right
       height: 24px
       margin-right: 16px
-      margin-top: 10px
       float: right
+      color: #2a82e4
+  
+  .border
+    width: 100%
+    margin: 0
+    padding: 0
+    background-color: #cccccc
+    height: 2px
+    border: 0px
 </style>
