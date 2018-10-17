@@ -11,6 +11,9 @@
           <div class='swiper-slide'>
             <schedule></schedule>
           </div>
+          <div class='swiper-slide'>
+            <find></find>
+          </div>
         </div>
       </div>
     </div>
@@ -24,6 +27,7 @@ import Clock from './components/clock'
 import TimeTable from './components/timetable'
 import Foot from './components/footer'
 import Schedule from './components/schedule'
+import Find from './components/find'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.css'
 import $ from 'jquery'
@@ -35,7 +39,8 @@ export default {
     Clock,
     TimeTable,
     Foot,
-    Schedule
+    Schedule,
+    Find
   },
   mounted: function () {
     this.swip2init()
@@ -63,18 +68,18 @@ export default {
 <style lang="stylus" scoped>
   .home
     background-color: #f5f5f5
-    weight: 360px
-    height: 640px
+    weight: 22.5rem
+    height: 40rem
     .head
-      width: 360px
-      height: 60px
+      width: 22.5rem
+      height: 3.75rem
     .content
       width: auto
       height: auto
       .swiper-slide
-        height: 514px
-        width: 360px
+        height: 32.125rem
+        width: 22.5rem
     .foot
-      width: 360px
-      height: 64px
+      width: 22.5rem
+      height: 4rem
 </style>

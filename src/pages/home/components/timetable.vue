@@ -8,7 +8,7 @@
             <!--  <div class="btn btn-"+{{item.color}} :style="{ width:  {{item.end}}-{{item.start}} + 'px',marginLeft: + {{item.start}} + 450 + 'px',marginTop: 60 + 'px'}">{{item.title}}</div>-->
             </div>
           </div>
-          <div class="timeline" :style="{marginLeft: now + 450 + 'px'}"></div>
+          <div class="timeline" :style="{marginLeft: now + 28.125 + 'rem'}"></div>
           <div id='table' ></div>
         </div>
         <div class='swiper-slide'>
@@ -102,22 +102,22 @@ window.onload = timeinit();
 
 <style lang="stylus" scoped>
   .timetable
-    height: 350px
+    height: 21.875rem
     overflow-x: hidden
     background-color: #f4f4f4
     .swiper-container
-      width: 3600px
+      width: 225rem
       height: 100%
       .swiper-slide
-        margin-left: -270px
-        width: 2000px
+        margin-left: -16.875rem
+        width: 125rem
         float: left
         .btn
-          line-height: 50px
+          line-height: 3.125rem
           text-align: center
           color: white
-          border-radius: 5px
-          height: 50px
+          border-radius: 0.3125rem
+          height: 3.125rem
           position: absolute
           color: white
         .btn-red
@@ -138,13 +138,13 @@ window.onload = timeinit();
           background-color: #808080
         
         .timeline
-          width: 2px
-          height: 500px
+          width: 0.125rem
+          height: 31.25rem
           background-color: red
           position: absolute
         #table
-          width: 4500px
-          height: 400px
+          width: 281.25rem
+          height: 25rem
           padding: 0
           margin: 0
   
